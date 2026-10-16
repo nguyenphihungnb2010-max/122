@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trái Tim Tri Ân Phụ Nữ ❤️</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #05020a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Màn hình mở đầu */
+        #start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 2, 10, 0.96);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.2s ease;
+        }
+
+        #start-screen h1 {
+            color: #ffb6c1;
+            margin-bottom: 25px;
+            font-size: 26px;
+            text-align: center;
+            padding: 0 20px;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.7);
+            transition: transform 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.08);
+        }
+
+        /* Khung thiệp chúc mừng ở giữa */
+        .card-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 10;
+            background: rgba(25, 10, 35, 0.88);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.4);
+            border: 1px solid rgba(255, 192, 203, 0.4);
+            text-align: center;
+            backdrop-filter: blur(15px);
+            max-width: 480px;
+            width: 90%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-container.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .card-container h2 {
+            margin: 0 0 10px 0;
